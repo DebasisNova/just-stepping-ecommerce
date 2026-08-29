@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Just Stepping | Admin Dashboard</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./dashboard.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <div class="admin-logo">
+
+            <div class="logo-shoe">👟</div>
+
+            <div>
+                <h2>Just Stepping</h2>
+                <span>ADMIN PANEL</span>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.php" class="menu-item active">
+
+                <span class="menu-icon">▦</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="product.php" class="menu-item">
+
+                <span class="menu-icon">👟</span>
+
+                <span>Products</span>
+
+            </a>
+
+
+            <a href="category.php" class="menu-item">
+
+                <span class="menu-icon">▤</span>
+
+                <span>Categories</span>
+
+            </a>
+
+
+            <a href="orders.php" class="menu-item">
+
+                <span class="menu-icon">📦</span>
+
+                <span>Orders</span>
+
+            </a>
+
+
+            <a href="users.php" class="menu-item">
+
+                <span class="menu-icon">👥</span>
+
+                <span>Users</span>
+
+            </a>
+
+
+            <a href="settings.php" class="menu-item">
+
+                <span class="menu-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+            <a href="index.php" class="menu-item logout">
+
+                <span class="menu-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================
+             TOP BAR
+        ========================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="topbar-small">ADMIN PANEL</p>
+
+                <h1>Dashboard</h1>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>Admin</strong>
+
+                    <span>Administrator</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             WELCOME
+        ========================== -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <h2>Welcome back, Admin 👋</h2>
+
+                <p>
+                    Here's what's happening with your shoe store today.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             STATISTICS
+        ========================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- Products -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👟
+                </div>
+
+                <div class="stat-details">
+
+                    <span>Total Products</span>
+
+                    <h3>120</h3>
+
+                    <p class="positive">
+                        ↑ 12% from last month
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Users -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div class="stat-details">
+
+                    <span>Total Users</span>
+
+                    <h3>850</h3>
+
+                    <p class="positive">
+                        ↑ 8% from last month
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Orders -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📦
+                </div>
+
+                <div class="stat-details">
+
+                    <span>Total Orders</span>
+
+                    <h3>64</h3>
+
+                    <p class="positive">
+                        ↑ 15% from last month
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Sales -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ₹
+                </div>
+
+                <div class="stat-details">
+
+                    <span>Total Sales</span>
+
+                    <h3>₹1,24,500</h3>
+
+                    <p class="positive">
+                        ↑ 18% from last month
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             LOWER CONTENT
+        ========================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- Recent Orders -->
+
+            <div class="dashboard-card orders-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Recent Orders</h3>
+
+                        <p>Latest customer orders</p>
+
+                    </div>
+
+                    <a href="orders.php">View All</a>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Order ID</th>
+
+                                <th>Customer</th>
+
+                                <th>Product</th>
+
+                                <th>Amount</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>#1001</td>
+
+                                <td>Rahul Sharma</td>
+
+                                <td>Nike Air Max</td>
+
+                                <td>₹4,999</td>
+
+                                <td>
+                                    <span class="status delivered">
+                                        Delivered
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#1002</td>
+
+                                <td>Amit Kumar</td>
+
+                                <td>Adidas Ultraboost</td>
+
+                                <td>₹5,499</td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#1003</td>
+
+                                <td>Priya Das</td>
+
+                                <td>Puma Runner</td>
+
+                                <td>₹2,999</td>
+
+                                <td>
+                                    <span class="status shipped">
+                                        Shipped
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#1004</td>
+
+                                <td>Arjun Singh</td>
+
+                                <td>New Balance 574</td>
+
+                                <td>₹6,499</td>
+
+                                <td>
+                                    <span class="status delivered">
+                                        Delivered
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Quick Actions -->
+
+            <div class="dashboard-card quick-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Quick Actions</h3>
+
+                        <p>Manage your store</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a href="add-product.php" class="quick-action">
+
+                        <span>＋</span>
+
+                        <div>
+
+                            <strong>Add Product</strong>
+
+                            <small>Add a new shoe</small>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="manage.php" class="quick-action">
+
+                        <span>👟</span>
+
+                        <div>
+
+                            <strong>Manage Products</strong>
+
+                            <small>View all shoes</small>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="orders.php" class="quick-action">
+
+                        <span>📦</span>
+
+                        <div>
+
+                            <strong>Manage Orders</strong>
+
+                            <small>Check customer orders</small>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="users.php" class="quick-action">
+
+                        <span>👥</span>
+
+                        <div>
+
+                            <strong>Manage Users</strong>
+
+                            <small>View customers</small>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

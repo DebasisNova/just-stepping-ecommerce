@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Just Steeping | Manage Products</title>
+
+    <!-- Only manage.css -->
+    <link rel="stylesheet" href="manage.css">
+
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <div class="admin-logo">
+
+            <div class="logo-icon">
+                👟
+            </div>
+
+            <div class="logo-text">
+
+                <h2>Just Steeping</h2>
+
+                <span>ADMIN PANEL</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.php" class="menu-item">
+
+                <span class="menu-icon">▦</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="product.php" class="menu-item active">
+
+                <span class="menu-icon">👟</span>
+
+                <span>Products</span>
+
+            </a>
+
+
+            <a href="category.php" class="menu-item">
+
+                <span class="menu-icon">▤</span>
+
+                <span>Categories</span>
+
+            </a>
+
+
+            <a href="orders.php" class="menu-item">
+
+                <span class="menu-icon">📦</span>
+
+                <span>Orders</span>
+
+            </a>
+
+
+            <a href="users.php" class="menu-item">
+
+                <span class="menu-icon">👥</span>
+
+                <span>Users</span>
+
+            </a>
+
+
+            <a href="settings.php" class="menu-item">
+
+                <span class="menu-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <a href="index.php" class="menu-item logout">
+
+                <span class="menu-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div class="page-heading">
+
+                <p class="topbar-label">
+                    PRODUCT MANAGEMENT
+                </p>
+
+                <h1>Manage Products</h1>
+
+                <p class="page-description">
+                    View, edit and manage all shoes in your store.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    type="button"
+                    class="notification-btn"
+                    title="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div class="profile-details">
+
+                        <strong>Admin</strong>
+
+                        <span>Administrator</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             BREADCRUMB
+        ================================================== -->
+
+        <div class="breadcrumb">
+
+            <a href="dashboard.php">
+                Dashboard
+            </a>
+
+            <span>›</span>
+
+            <span>Products</span>
+
+            <span>›</span>
+
+            <strong>Manage Products</strong>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PAGE ACTION BAR
+        ================================================== -->
+
+        <section class="page-action-bar">
+
+
+            <div class="product-count">
+
+                <strong>Products</strong>
+
+                <span id="productCount">
+                    8 products
+                </span>
+
+            </div>
+
+
+            <a
+                href="add_product.php"
+                class="add-product-btn"
+            >
+
+                <span>+</span>
+
+                Add Product
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILTER SECTION
+        ================================================== -->
+
+        <section class="filter-card">
+
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+
+            </div>
+
+
+            <!-- Category -->
+
+            <div class="filter-item">
+
+                <label for="categoryFilter">
+                    Category
+                </label>
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="running">
+                        Running Shoes
+                    </option>
+
+                    <option value="casual">
+                        Casual Shoes
+                    </option>
+
+                    <option value="sports">
+                        Sports Shoes
+                    </option>
+
+                    <option value="sneakers">
+                        Sneakers
+                    </option>
+
+                    <option value="formal">
+                        Formal Shoes
+                    </option>
+
+                    <option value="boots">
+                        Boots
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="filter-item">
+
+                <label for="statusFilter">
+                    Status
+                </label>
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="draft">
+                        Draft
+                    </option>
+
+                    <option value="out">
+                        Out of Stock
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Sort -->
+
+            <div class="filter-item">
+
+                <label for="sortFilter">
+                    Sort By
+                </label>
+
+                <select id="sortFilter">
+
+                    <option value="newest">
+                        Newest
+                    </option>
+
+                    <option value="oldest">
+                        Oldest
+                    </option>
+
+                    <option value="price-low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="price-high">
+                        Price: High to Low
+                    </option>
+
+                    <option value="stock-low">
+                        Stock: Low to High
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Clear -->
+
+            <button
+                type="button"
+                class="clear-btn"
+                id="clearFilters"
+            >
+                Clear
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRODUCT TABLE
+        ================================================== -->
+
+        <section class="products-card">
+
+
+            <div class="table-wrapper">
+
+                <table id="productsTable">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    id="selectAll"
+                                >
+
+                            </th>
+
+                            <th>
+                                PRODUCT
+                            </th>
+
+                            <th>
+                                CATEGORY
+                            </th>
+
+                            <th>
+                                PRICE
+                            </th>
+
+                            <th>
+                                STOCK
+                            </th>
+
+                            <th>
+                                STATUS
+                            </th>
+
+                            <th>
+                                ADDED
+                            </th>
+
+                            <th>
+                                ACTIONS
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <!-- PRODUCT 1 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Air Runner Pro"
+                            data-category="running"
+                            data-status="active"
+                            data-price="2999"
+                            data-stock="25"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe1.jpg"
+                                            alt="Air Runner Pro"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>
+                                            👟
+                                        </span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Air Runner Pro
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1001
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Running Shoes
+                            </td>
+
+
+                            <td>
+
+                                <strong>
+                                    ₹2,999
+                                </strong>
+
+                            </td>
+
+
+                            <td>
+
+                                <span class="stock-number">
+                                    25
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <span class="status active">
+                                    Active
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                28 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=1"
+                                        class="action-btn edit"
+                                        title="Edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        title="Delete"
+                                        data-product="Air Runner Pro"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PRODUCT 2 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Street Classic"
+                            data-category="casual"
+                            data-status="active"
+                            data-price="2499"
+                            data-stock="18"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe2.jpg"
+                                            alt="Street Classic"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>👟</span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Street Classic
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1002
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Casual Shoes
+                            </td>
+
+
+                            <td>
+                                <strong>₹2,499</strong>
+                            </td>
+
+
+                            <td>
+                                <span class="stock-number">
+                                    18
+                                </span>
+                            </td>
+
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+
+                            <td>
+                                27 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=2"
+                                        class="action-btn edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        data-product="Street Classic"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PRODUCT 3 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Velocity Max"
+                            data-category="sports"
+                            data-status="active"
+                            data-price="3499"
+                            data-stock="12"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe3.jpg"
+                                            alt="Velocity Max"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>👟</span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Velocity Max
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1003
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Sports Shoes
+                            </td>
+
+
+                            <td>
+                                <strong>₹3,499</strong>
+                            </td>
+
+
+                            <td>
+                                <span class="stock-number">
+                                    12
+                                </span>
+                            </td>
+
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+
+                            <td>
+                                25 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=3"
+                                        class="action-btn edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        data-product="Velocity Max"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PRODUCT 4 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Urban Flex"
+                            data-category="sneakers"
+                            data-status="active"
+                            data-price="2799"
+                            data-stock="31"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe4.jpg"
+                                            alt="Urban Flex"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>👟</span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Urban Flex
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1004
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Sneakers
+                            </td>
+
+
+                            <td>
+                                <strong>₹2,799</strong>
+                            </td>
+
+
+                            <td>
+                                <span class="stock-number high">
+                                    31
+                                </span>
+                            </td>
+
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+
+                            <td>
+                                23 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=4"
+                                        class="action-btn edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        data-product="Urban Flex"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PRODUCT 5 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Executive Leather"
+                            data-category="formal"
+                            data-status="active"
+                            data-price="3999"
+                            data-stock="8"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe5.jpg"
+                                            alt="Executive Leather"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>👞</span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Executive Leather
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1005
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Formal Shoes
+                            </td>
+
+
+                            <td>
+                                <strong>₹3,999</strong>
+                            </td>
+
+
+                            <td>
+                                <span class="stock-number low">
+                                    8
+                                </span>
+                            </td>
+
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+
+                            <td>
+                                21 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=5"
+                                        class="action-btn edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        data-product="Executive Leather"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PRODUCT 6 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Mountain Trek"
+                            data-category="boots"
+                            data-status="out"
+                            data-price="4299"
+                            data-stock="0"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe6.jpg"
+                                            alt="Mountain Trek"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>🥾</span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Mountain Trek
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1006
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Boots
+                            </td>
+
+
+                            <td>
+                                <strong>₹4,299</strong>
+                            </td>
+
+
+                            <td>
+                                <span class="stock-number out">
+                                    0
+                                </span>
+                            </td>
+
+
+                            <td>
+                                <span class="status out">
+                                    Out of Stock
+                                </span>
+                            </td>
+
+
+                            <td>
+                                19 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=6"
+                                        class="action-btn edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        data-product="Mountain Trek"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PRODUCT 7 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Daily Walk"
+                            data-category="casual"
+                            data-status="draft"
+                            data-price="1999"
+                            data-stock="20"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe7.jpg"
+                                            alt="Daily Walk"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>👟</span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Daily Walk
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1007
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Casual Shoes
+                            </td>
+
+
+                            <td>
+                                <strong>₹1,999</strong>
+                            </td>
+
+
+                            <td>
+                                <span class="stock-number">
+                                    20
+                                </span>
+                            </td>
+
+
+                            <td>
+                                <span class="status draft">
+                                    Draft
+                                </span>
+                            </td>
+
+
+                            <td>
+                                18 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=7"
+                                        class="action-btn edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        data-product="Daily Walk"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PRODUCT 8 -->
+
+                        <tr
+                            class="product-row"
+                            data-name="Sport Lite"
+                            data-category="sports"
+                            data-status="active"
+                            data-price="2299"
+                            data-stock="16"
+                        >
+
+                            <td class="check-column">
+
+                                <input
+                                    type="checkbox"
+                                    class="product-checkbox"
+                                >
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="product-info">
+
+                                    <div class="product-image">
+
+                                        <img
+                                            src="images/shoe8.jpg"
+                                            alt="Sport Lite"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                                        >
+
+                                        <span>👟</span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Sport Lite
+                                        </strong>
+
+                                        <small>
+                                            SKU: SV-1008
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Sports Shoes
+                            </td>
+
+
+                            <td>
+                                <strong>₹2,299</strong>
+                            </td>
+
+
+                            <td>
+                                <span class="stock-number">
+                                    16
+                                </span>
+                            </td>
+
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+
+                            <td>
+                                15 Aug 2026
+                            </td>
+
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <a
+                                        href="edit_product.php?id=8"
+                                        class="action-btn edit"
+                                    >
+                                        ✏
+                                    </a>
+
+                                    <button
+                                        type="button"
+                                        class="action-btn delete"
+                                        data-product="Sport Lite"
+                                    >
+                                        🗑
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+
+                <!-- EMPTY RESULT -->
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                >
+
+                    <div class="empty-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        No products found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filters.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TABLE FOOTER
+            ================================================== -->
+
+            <div class="table-footer">
+
+
+                <div class="selected-info">
+
+                    <span id="selectedCount">
+                        0 selected
+                    </span>
+
+                </div>
+
+
+                <div class="pagination">
+
+
+                    <button
+                        type="button"
+                        class="page-btn disabled"
+                        id="prevPage"
+                    >
+                        ‹
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="page-number active"
+                    >
+                        1
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="page-number"
+                    >
+                        2
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="page-number"
+                    >
+                        3
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="page-btn"
+                        id="nextPage"
+                    >
+                        ›
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DELETE MODAL
+        ================================================== -->
+
+        <div
+            class="modal-overlay"
+            id="deleteModal"
+        >
+
+            <div class="delete-modal">
+
+                <div class="delete-icon">
+                    🗑
+                </div>
+
+                <h2>
+                    Delete Product?
+                </h2>
+
+                <p>
+                    Are you sure you want to delete
+                    <strong id="deleteProductName">
+                        this product
+                    </strong>?
+                    This action cannot be undone.
+                </p>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="modal-cancel"
+                        id="cancelDelete"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="button"
+                        class="modal-delete"
+                        id="confirmDelete"
+                    >
+                        Delete Product
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           ELEMENTS
+        ================================================== */
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const categoryFilter =
+            document.getElementById("categoryFilter");
+
+        const statusFilter =
+            document.getElementById("statusFilter");
+
+        const sortFilter =
+            document.getElementById("sortFilter");
+
+        const clearFilters =
+            document.getElementById("clearFilters");
+
+        const productRows =
+            document.querySelectorAll(".product-row");
+
+        const emptyState =
+            document.getElementById("emptyState");
+
+        const productCount =
+            document.getElementById("productCount");
+
+
+
+        /* =================================================
+           FILTER PRODUCTS
+        ================================================== */
+
+        function filterProducts() {
+
+            const search =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
+
+            const category =
+                categoryFilter.value;
+
+            const status =
+                statusFilter.value;
+
+
+            let visibleProducts = 0;
+
+
+            productRows.forEach(
+                function (row) {
+
+
+                    const name =
+                        row.dataset.name
+                            .toLowerCase();
+
+                    const rowCategory =
+                        row.dataset.category;
+
+                    const rowStatus =
+                        row.dataset.status;
+
+
+                    const matchesSearch =
+                        name.includes(search);
+
+
+                    const matchesCategory =
+                        category === "all" ||
+                        rowCategory === category;
+
+
+                    const matchesStatus =
+                        status === "all" ||
+                        rowStatus === status;
+
+
+                    if (
+                        matchesSearch &&
+                        matchesCategory &&
+                        matchesStatus
+                    ) {
+
+                        row.style.display =
+                            "";
+
+                        visibleProducts++;
+
+                    } else {
+
+                        row.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+
+            /* Empty state */
+
+            if (visibleProducts === 0) {
+
+                emptyState.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                emptyState.classList.remove(
+                    "show"
+                );
+
+            }
+
+
+            productCount.textContent =
+                visibleProducts +
+                (
+                    visibleProducts === 1
+                        ? " product"
+                        : " products"
+                );
+
+        }
+
+
+
+        searchInput.addEventListener(
+            "input",
+            filterProducts
+        );
+
+
+        categoryFilter.addEventListener(
+            "change",
+            filterProducts
+        );
+
+
+        statusFilter.addEventListener(
+            "change",
+            filterProducts
+        );
+
+
+
+        /* =================================================
+           SORT PRODUCTS
+        ================================================== */
+
+        sortFilter.addEventListener(
+            "change",
+            function () {
+
+
+                const tbody =
+                    document.querySelector(
+                        "#productsTable tbody"
+                    );
+
+
+                const rows =
+                    Array.from(
+                        productRows
+                    );
+
+
+                const sortValue =
+                    this.value;
+
+
+                rows.sort(
+                    function (a, b) {
+
+
+                        if (
+                            sortValue ===
+                            "price-low"
+                        ) {
+
+                            return (
+                                Number(
+                                    a.dataset.price
+                                ) -
+                                Number(
+                                    b.dataset.price
+                                )
+                            );
+
+                        }
+
+
+                        if (
+                            sortValue ===
+                            "price-high"
+                        ) {
+
+                            return (
+                                Number(
+                                    b.dataset.price
+                                ) -
+                                Number(
+                                    a.dataset.price
+                                )
+                            );
+
+                        }
+
+
+                        if (
+                            sortValue ===
+                            "stock-low"
+                        ) {
+
+                            return (
+                                Number(
+                                    a.dataset.stock
+                                ) -
+                                Number(
+                                    b.dataset.stock
+                                )
+                            );
+
+                        }
+
+
+                        return 0;
+
+                    }
+                );
+
+
+                rows.forEach(
+                    function (row) {
+
+                        tbody.appendChild(row);
+
+                    }
+                );
+
+
+                filterProducts();
+
+            }
+        );
+
+
+
+        /* =================================================
+           CLEAR FILTERS
+        ================================================== */
+
+        clearFilters.addEventListener(
+            "click",
+            function () {
+
+                searchInput.value = "";
+
+                categoryFilter.value =
+                    "all";
+
+                statusFilter.value =
+                    "all";
+
+                sortFilter.value =
+                    "newest";
+
+                filterProducts();
+
+            }
+        );
+
+
+
+        /* =================================================
+           SELECT ALL
+        ================================================== */
+
+        const selectAll =
+            document.getElementById(
+                "selectAll"
+            );
+
+
+        const productCheckboxes =
+            document.querySelectorAll(
+                ".product-checkbox"
+            );
+
+
+        const selectedCount =
+            document.getElementById(
+                "selectedCount"
+            );
+
+
+        function updateSelectedCount() {
+
+            const checked =
+                document.querySelectorAll(
+                    ".product-checkbox:checked"
+                ).length;
+
+
+            selectedCount.textContent =
+                checked +
+                (
+                    checked === 1
+                        ? " selected"
+                        : " selected"
+                );
+
+        }
+
+
+        selectAll.addEventListener(
+            "change",
+            function () {
+
+                productCheckboxes.forEach(
+                    function (checkbox) {
+
+                        checkbox.checked =
+                            selectAll.checked;
+
+                    }
+                );
+
+
+                updateSelectedCount();
+
+            }
+        );
+
+
+        productCheckboxes.forEach(
+            function (checkbox) {
+
+                checkbox.addEventListener(
+                    "change",
+                    function () {
+
+                        const allChecked =
+                            document.querySelectorAll(
+                                ".product-checkbox:checked"
+                            ).length ===
+                            productCheckboxes.length;
+
+
+                        selectAll.checked =
+                            allChecked;
+
+
+                        updateSelectedCount();
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =================================================
+           DELETE MODAL
+        ================================================== */
+
+        const deleteModal =
+            document.getElementById(
+                "deleteModal"
+            );
+
+        const deleteProductName =
+            document.getElementById(
+                "deleteProductName"
+            );
+
+        const cancelDelete =
+            document.getElementById(
+                "cancelDelete"
+            );
+
+        const confirmDelete =
+            document.getElementById(
+                "confirmDelete"
+            );
+
+
+        let productToDelete = null;
+
+
+        document
+            .querySelectorAll(".delete")
+            .forEach(
+                function (button) {
+
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+
+                            productToDelete =
+                                this.closest(
+                                    ".product-row"
+                                );
+
+
+                            deleteProductName.textContent =
+                                this.dataset.product;
+
+
+                            deleteModal.classList.add(
+                                "show"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* Cancel delete */
+
+        cancelDelete.addEventListener(
+            "click",
+            function () {
+
+                deleteModal.classList.remove(
+                    "show"
+                );
+
+                productToDelete = null;
+
+            }
+        );
+
+
+
+        /* Confirm delete */
+
+        confirmDelete.addEventListener(
+            "click",
+            function () {
+
+
+                if (productToDelete) {
+
+                    productToDelete.remove();
+
+                    productToDelete = null;
+
+                    deleteModal.classList.remove(
+                        "show"
+                    );
+
+                    filterProducts();
+
+                }
+
+            }
+        );
+
+
+
+        /* Close modal by clicking outside */
+
+        deleteModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    deleteModal
+                ) {
+
+                    deleteModal.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================================
+           INITIAL FILTER
+        ================================================== */
+
+        filterProducts();
+
+
+    </script>
+
+
+</body>
+
+</html>
