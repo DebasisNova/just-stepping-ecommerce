@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Just stepping | Admin Login</title>
+    <title>Just Stepping | Admin Login</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,20 +20,28 @@
 
             <div class="logo">
                 <span class="logo-icon">Just stepping 👟</span>
-                <span></span>
             </div>
 
             <div class="brand-content">
-                <h1>Step Into<br>Management.</h1>
+
+                <h1>
+                    Step Into<br>
+                    Management.
+                </h1>
 
                 <p>
                     Manage your shoes, products, orders and customers
                     from one powerful dashboard.
                 </p>
+
             </div>
 
             <div class="brand-footer">
-                <p>© 2026 Just stepping. All rights reserved.</p>
+
+                <p>
+                    © 2026 Just stepping. All rights reserved.
+                </p>
+
             </div>
 
         </div>
@@ -43,25 +53,35 @@
             <div class="login-box">
 
                 <div class="mobile-logo">
+
                     <span class="logo-icon">👟</span>
                     <span>Just stepping</span>
+
                 </div>
 
-                <p class="welcome">WELCOME BACK</p>
 
-                <h2>Admin Login</h2>
+                <p class="welcome">
+                    WELCOME BACK
+                </p>
+
+                <h2>
+                    Admin Login
+                </h2>
 
                 <p class="login-description">
                     Login to access your administration dashboard.
                 </p>
 
 
-                <form action="dashboard.html" method="get">
+                <!-- Login Form -->
+                <form id="loginForm">
 
                     <!-- Email -->
                     <div class="input-group">
 
-                        <label for="email">Email Address</label>
+                        <label for="email">
+                            Email Address
+                        </label>
 
                         <input
                             type="email"
@@ -77,7 +97,9 @@
                     <!-- Password -->
                     <div class="input-group">
 
-                        <label for="password">Password</label>
+                        <label for="password">
+                            Password
+                        </label>
 
                         <input
                             type="password"
@@ -94,20 +116,40 @@
                     <div class="login-options">
 
                         <label class="remember">
-                            <input type="checkbox" name="remember">
-                            <span>Remember me</span>
+
+                            <input
+                                type="checkbox"
+                                name="remember"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
                         </label>
 
-                        <a href="#">Forgot Password?</a>
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
 
                     </div>
 
 
+                    <!-- Error Message -->
+                    <p id="loginError"></p>
+
+
                     <!-- Login Button -->
-                    <button type="submit" class="login-btn">
-                        
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+
                         Login to Dashboard
+
                         <span>→</span>
+
                     </button>
 
                 </form>
@@ -118,5 +160,63 @@
 
     </div>
 
+
+    <!-- JavaScript -->
+    <script>
+
+        const loginForm = document.getElementById("loginForm");
+
+        loginForm.addEventListener("submit", function(event) {
+
+            // Stop normal form submission
+            event.preventDefault();
+
+
+            // Get entered values
+            const email =
+                document.getElementById("email").value;
+
+            const password =
+                document.getElementById("password").value;
+
+
+            // Error message element
+            const loginError =
+                document.getElementById("loginError");
+
+
+            // Correct login details
+            const correctEmail =
+                "Litindia1@gmail.com";
+
+            const correctPassword =
+                "admin123";
+
+
+            // Check email and password
+            if (
+                email === correctEmail &&
+                password === correctPassword
+            ) {
+
+                // Correct login
+                loginError.textContent = "";
+
+                // Open dashboard
+                window.location.href = "dashboard.html";
+
+            } else {
+
+                // Wrong login
+                loginError.textContent =
+                    "❌ Incorrect email or password.";
+
+            }
+
+        });
+
+    </script>
+
 </body>
+
 </html>
